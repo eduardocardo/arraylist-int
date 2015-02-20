@@ -160,4 +160,22 @@ public class ArrayListInt
         }
         return index;
     }
+    
+    /**
+     * Metodo que  devuelve true si la lista no contiene elementos.
+     */
+    public boolean isEmpty()
+    {
+        boolean listaVacia = true; //consideramos que la lista no contiene elementos
+        int cont = 0;
+        while((cont<arrayList.length) && (listaVacia)) //mientras no se recorra toda la coleccion y la lista este vacia se repite el ciclo
+        {
+            if(arrayList[cont] !=0)  //en cuanto se encuentra el primer elemento en la coleccion
+            {
+                listaVacia = false;   //la lista no esta vacia
+            }
+            cont++;
+        }
+        return listaVacia;
+    }
 }
