@@ -1,4 +1,5 @@
-
+import java.util.Iterator;
+import java.util.Vector;
 /**
  * Write a description of class ArrayListInt here.
  * 
@@ -68,5 +69,11 @@ public class ArrayListInt
         }
     }
 
-   
+    /**
+     * Metodo que vacia la coleccion
+     */
+    public void clear()
+    { 
+        arrayList = new int[0];
+    }
 }
