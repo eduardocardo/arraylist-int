@@ -203,4 +203,17 @@ public class ArrayListInt
         }
         return element;
     }
+    
+    /**
+     * Metodo que  devuelve el número de elementos de la colección.
+     */
+    public int size()
+    {
+        int numeroElementos = 0;    //variable que almacena el numero de elementos que tiene la coleccion
+        for(int cont = 0 ; cont<arrayList.length ; cont++)  //recorremos toda la coleccion
+        {
+            numeroElementos+=arrayList[cont];   //va sumando en la variable la cantidad de elementos que hay en cada posicion de la coleccion
+        }
+        return numeroElementos;
+    }
 }
