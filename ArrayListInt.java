@@ -118,4 +118,26 @@ public class ArrayListInt
         }
         return elemento;
     }
+    
+    /**
+     *Metodo que reemplaza el elemento en la posición index con el valor de element 
+     *Si el índice no es válido, no hace nada.  
+     */
+    public void  set(int index, int element)
+    {
+        if((index<arrayList.length) && (index>=0))    //se hace un control de rango para ver si el valor del parametro es el adecuado
+        {
+            boolean found = false;  //se inicializa en false porque se considera que no se ha encontrado el objeto
+            int cont = 0;
+            while((cont<arrayList.length) && (!found))   //mientras no se encuentre el objeto y no se recorra toda la coleccion se repite el ciclo
+            {
+                if(cont== index)    //si el valor del parametro coincide con la posicion de la coleccion
+                {
+                    arrayList[cont] = element;   //reemplazamos el valor existente por el valor pasado por parametro
+                    found = true;
+                }
+                cont++;
+            }
+        }
+    }
 }
