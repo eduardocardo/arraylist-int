@@ -76,4 +76,22 @@ public class ArrayListInt
     { 
         arrayList = new int[0];
     }
+    
+    /**
+     * Metodo que devuelve true si contiene en la coleccion el elemento pasado como parametro
+     */
+    public boolean contains(int elemento)
+    {
+        boolean found = false;    //se inicializa a falso porque no se ha encontrado el elemento
+        int cont = 0;
+        while((cont<arrayList.length) && (found==false))  //se recorre el bucle mientras no se supere el tamaño de coleccion y no se encuentre el objeto
+        {
+            if(arrayList[cont] == elemento) //si un objeto de la coleccion coincide con el parametro
+            {
+                found = true;    //se encuentra el objeto
+            }
+            cont++;
+        }
+        return found;
+    }
 }
