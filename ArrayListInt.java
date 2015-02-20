@@ -162,7 +162,7 @@ public class ArrayListInt
     }
     
     /**
-     * Metodo que  devuelve true si la lista no contiene elementos.
+     * Metodo que devuelve true si la lista no contiene elementos.
      */
     public boolean isEmpty()
     {
@@ -177,5 +177,30 @@ public class ArrayListInt
             cont++;
         }
         return listaVacia;
+    }
+    
+    /**
+     * Metodo que elimina de la colección el elemento que ocupa la posición especificada y devuelve dicho elemento
+     * Si el indice no es valido no hace nada y devuelve -1
+     */
+    public int remove(int index)
+    {
+        int element = -1;        //consideramos que el indice no es valido
+        if((index<arrayList.length) && (index>=0))  //control de rango para comprobar que el indice es valido
+        {
+            int cont = 0;
+            boolean found = false;   //se considera que no se ha encontrado el objeto
+            while((cont<arrayList.length) &&(!found))  //mientras no se encuentre el objeto y no se recorra toda la coleccion se repite el ciclo
+            {
+                if(cont == index)   //si el valor del parametro coincide con la posicion de la coleccion
+                {
+                    element = arrayList[cont]; //guardamos el elemento contenido en la posicion especificada
+                    arrayList[cont]= 0;       //eliminamos el elemento
+                    found = true;
+                }
+                cont++;
+            }
+        }
+        return element;
     }
 }
