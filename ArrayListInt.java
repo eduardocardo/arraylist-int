@@ -84,7 +84,7 @@ public class ArrayListInt
     {
         boolean found = false;    //se inicializa a falso porque no se ha encontrado el elemento
         int cont = 0;
-        while((cont<arrayList.length) && (found==false))  //se recorre el bucle mientras no se supere el tamaño de coleccion y no se encuentre el objeto
+        while((cont<arrayList.length) && (!found))  //se recorre el bucle mientras no se supere el tamaño de coleccion y no se encuentre el objeto
         {
             if(arrayList[cont] == elemento) //si un objeto de la coleccion coincide con el parametro
             {
@@ -93,5 +93,29 @@ public class ArrayListInt
             cont++;
         }
         return found;
+    }
+    
+    /**
+     * Metodo que devuelve el elemento existente en la posicion indicada
+     * si el valor del parametro no es valido devuelve -1
+     */
+    public int get(int index)
+    {
+        int elemento = -1;
+        if((index<arrayList.length) && (index>=0))   //se hace un control de rango para ver si el valor del parametro es el adecuado
+        {
+            boolean found = false;  //se inicializa en false porque se considera que no se ha encontrado el objeto
+            int cont = 0;
+            while((cont<arrayList.length) && (!found))   //mientras no se encuentre el objeto y no se recorra toda la coleccion se repite el ciclo
+            {
+                if(cont== index)    //si el valor del parametro coincide con la posicion de la coleccion
+                {
+                    elemento = arrayList[cont];   //almacenamos el objeto correspondiente a esa posicion
+                    found = true;
+                }
+                cont++;
+            }
+        }
+        return elemento;
     }
 }
