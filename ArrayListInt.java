@@ -19,7 +19,6 @@ public class ArrayListInt
         arrayList = new int[0];   //se crea un array de tamaño 0 que luego se redimensionara
     }
 
-    
     /**
     /**
      * Metodo que añade un elemento a la coleccion al final de la misma
@@ -63,7 +62,7 @@ public class ArrayListInt
                     temp[cont] = arrayList[i]; 
                     i++;     //aumentamos el indice del array original
                 }
-                
+
             }
             arrayList = temp;
         }
@@ -76,7 +75,7 @@ public class ArrayListInt
     { 
         arrayList = new int[0];
     }
-    
+
     /**
      * Metodo que devuelve true si contiene en la coleccion el elemento pasado como parametro
      */
@@ -94,7 +93,7 @@ public class ArrayListInt
         }
         return found;
     }
-    
+
     /**
      * Metodo que devuelve el elemento existente en la posicion indicada
      * si el valor del parametro no es valido devuelve -1
@@ -118,7 +117,7 @@ public class ArrayListInt
         }
         return elemento;
     }
-    
+
     /**
      *Metodo que reemplaza el elemento en la posición index con el valor de element 
      *Si el índice no es válido, no hace nada.  
@@ -139,5 +138,26 @@ public class ArrayListInt
                 cont++;
             }
         }
+    }
+
+    /**
+     * Metodo que devuelve el indice en el que aparece la primera ocurrencia del elemento especificado 
+     * si la coleccion no contiene ningun elemento como el parametro introducido devuelve -1
+     */
+    public int indexOf(int element)
+    {
+        int index = -1;   //consideramos que la coleccion no contiene ningun elemento
+        boolean found = false;  //se inicializa en false porque se considera que no se ha encontrado el objeto
+        int cont = 0;
+        while((cont<arrayList.length) && (!found))   //mientras no se encuentre el objeto y no se recorra toda la coleccion se repite el ciclo
+        {
+            if(arrayList[cont] == element)    //si un objeto de la coleccion coincide con el valor del parametro
+            {
+                index = cont;   //almacenamos el indice de la coleccion
+                found = true;
+            }
+            cont++;
+        }
+        return index;
     }
 }
